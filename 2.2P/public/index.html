@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; }
+    input, select, button { margin: 5px; padding: 8px; }
+    #result { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Basic Calculator</h2>
+    <div>
+      <h3>GET: Add Numbers</h3>
+      <input type="number" id="getNum1" placeholder="Number 1">
+      <input type="number" id="getNum2" placeholder="Number 2">
+      <button onclick="addNumbers()">Add</button>
+      <div id="getResult"></div>
+    </div>
+    <div>
+      <h3>POST: Calculator</h3>
+      <input type="number" id="postNum1" placeholder="Number 1">
+      <input type="number" id="postNum2" placeholder="Number 2">
+      <select id="operation">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+      </select>
+      <button onclick="calculate()">Calculate</button>
+      <div id="postResult"></div>
+    </div>
+  </div>
+
+  <script>
+    async function addNumbers() {
+      const num1 = document.getElementById('getNum1').value;
+      const num2 = document.getElementById('getNum2').value;
+      try {
+        const response = await fetch(`/add?num1=${num1}&num2=${num2}`);
+        const data = await response.json();
+        if (response.ok) {
+          document.getElementById('getResult').innerText = 'Result: ' + data.result;
+        } else {
+          document.getElementById('getResult').innerText = 'Error: ' + data.error;
+        }
+      } catch (error) {
+        document.getElementById('getResult').innerText = 'Error: ' + error.message;
+      }
+    }
+
+    async function calculate() {
+      const num1 = parseFloat(document.getElementById('postNum1').value);
+      const num2 = parseFloat(document.getElementById('postNum2').value);
+      const operation = document.getElementById('operation').value;
+      try {
+        const response = await fetch('/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ num1, num2, operation })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          document.getElementById('postResult').innerText = 'Result: ' + data.result;
+        } else {
+          document.getElementById('postResult').innerText = 'Error: ' + data.error;
+        }
+      } catch (error) {
+        document.getElementById('postResult').innerText = 'Error: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
