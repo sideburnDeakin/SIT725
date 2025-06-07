@@ -1,0 +1,42 @@
+.navbar-size {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.user-image-size {
+  max-height: 48px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px; 
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.cards-container .card-content {
+  min-height: 150px;
+}
+
+.card-action .btn-small {
+  margin-top: 10px;
+}
+
+.card-logo {
+  height: 160px;
+  width: 100%;              
+  object-fit: cover;        
+  border-radius: 6px;      
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.submission-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
