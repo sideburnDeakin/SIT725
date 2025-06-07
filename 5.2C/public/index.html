@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Game Development Wiki</title>
+        <meta name="description" content="MVC pattern for SIT 725 5.2C" />
+        <meta name="author" content="SitePoint" />
+        <meta property="og:title" content="game development wiki" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="MVC pattern for SIT 725 5.2C" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <!-- custom style sheet-->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-wrapper navbar-size">
+                <a href="#" class="brand-logo"><img class="user-image-size" src="images/Game-dev-logo.png" /></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a class="btn green" href="https://www.coursera.org/courses?query=game%20development" target="_blank">
+                            Start Game Dev
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Welcome Message -->
+        <div class="container section">
+            <h4>Welcome to GameDev Hub</h4>
+            <p>Explore game development tools, tutorials, and community insights.</p>
+        </div>
+
+        <!-- Static Cards Section -->
+        <div class="container section cards-container">
+            <div class="row">
+                <!-- Unity Card -->
+                <div class="col s12 m4">
+                    <div class="card blue lighten-4">
+                        <div class="card-content">
+                            <img src="images/unity-logo.png" alt="Unity Logo" class="card-logo" />
+                            <span class="card-title">Unity Engine</span>
+                            <p>Unity is great for mobile and 2D/3D indie games. Learn scripting in C# and create cross-platform projects.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="btn-small blue" href="https://unity.com" target="_blank">Get Unity</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unreal Card -->
+                <div class="col s12 m4">
+                    <div class="card green lighten-4">
+                        <div class="card-content">
+                            <img src="images/unreal-logo.jpg" alt="Unreal Logo" class="card-logo" />
+                            <span class="card-title">Unreal Engine</span>
+                            <p>Unreal offers high-quality visuals, used for AAA titles. Learn Blueprint or C++ for advanced control and unlock the possibilities to work with AAA publishers.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="btn-small green" href="https://unrealengine.com" target="_blank">Get Unreal</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Godot Card -->
+                <div class="col s12 m4">
+                    <div class="card orange lighten-4">
+                        <div class="card-content">
+                            <img src="images/godot-logo.png" alt="Godot Logo" class="card-logo" />
+                            <span class="card-title">Godot Engine</span>
+                            <p>A lightweight and open-source game engine, great for learners and 2D game creators. The community is booming currently!</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="btn-small orange" href="https://godotengine.org" target="_blank">Get Godot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Trigger Card -->
+        <div class="container section">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Join the Community</span>
+                    <p>We’d love to know more about you and your interests in game development.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="modal-trigger btn blue" data-target="infoModal">Tell Us About You</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Cards Container -->
+        <div class="container" id="dynamic-cards"></div>
+
+        <!-- Modal Structure -->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <h4>User Info</h4>
+                <form id="userForm">
+                    <div class="input-field">
+                        <input id="name" type="text" required />
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="interest" type="text" required />
+                        <label for="interest">Your Interest in Game Dev</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea id="experience" class="materialize-textarea"></textarea>
+                        <label for="experience">Your Experience / How You Heard</label>
+                    </div>
+
+                    <!-- New Email Section -->
+                    <p>
+                        <strong>Wanna hear back from us?</strong><br />
+                        Please give us your email (optional):
+                    </p>
+                    <div class="input-field">
+                        <input id="email" type="email" />
+                        <label for="email">Your Email (Optional)</label>
+                    </div>
+
+                    <button type="submit" class="btn green">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

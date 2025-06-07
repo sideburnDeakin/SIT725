@@ -1,0 +1,26 @@
+{
+  "name": "5.2c",
+  "version": "1.0.0",
+  "description": "MVC Pattern in Game Dev Wiki",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sideburnDeakin/SIT725.git"
+  },
+  "keywords": [
+    "\"MVC\""
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sideburnDeakin/SIT725/issues"
+  },
+  "homepage": "https://github.com/sideburnDeakin/SIT725#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
